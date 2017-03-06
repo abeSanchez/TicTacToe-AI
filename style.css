@@ -1,0 +1,79 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Catamaran', sans-serif;
+  background-color: #88E2D5;
+}
+
+header {
+  padding: 0;
+  margin: 0;
+  height: 98.85vh;
+}
+
+h1 {
+  font-size: 8vh;
+  text-align: center;
+  color: white;
+  margin-bottom: 0;
+}
+
+p {
+  text-align: center;
+  margin-top: -2.1vh;
+  font-size: 2vh;
+  color: white;
+}
+
+#board {
+  padding: 0;
+  margin: auto;
+  width: 66vh;
+  height: 66vh;
+}
+
+.tile {
+  padding: 0;
+  margin: 1vh;
+  border-radius: 10px;
+  width: 20vh;
+  height: 20vh;
+  background-color: white;
+  font-size: 13.5vh;
+  cursor: pointer;
+  float: left;
+  color: #7acbbf;
+  text-align: center;
+}
+
+.tile:hover{
+  background-color: #eeeeee;
+  transition-duration: 0.2s;
+}
+
+.buttons {
+  margin: 0 auto;
+  margin-top: 1vh;
+  text-align: center;
+  background-color: white;
+  width: 15vh;
+  height: auto;
+  border-radius: 5px;
+  color: #7acbbf;
+  font-size: 3vh;
+  cursor: pointer;
+}
+
+.buttons:hover {
+  background-color: #eeeeee;
+  transition-duration: 0.2s;
+}
+
+footer {
+  height: 3vh;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  background-color: #7acbbf;
+  color: white;
+}
