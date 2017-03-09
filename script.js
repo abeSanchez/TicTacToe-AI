@@ -1,15 +1,16 @@
 var tiles = document.getElementsByClassName("tile");
 var buttons = document.getElementsByClassName('buttons');
-var xturn = true;
+var winnerExists = false;
 var board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 function claim(tile) {
-    if (xturn == true && isntClaimed(tile)) {
+    if (isntClaimed(tile) && winnerExists == false) {
         tile.innerHTML = 'X';
-        xturn = false;
-    } else if (xturn == false && isntClaimed(tile)) {
-        tile.innerHTML = 'O';
-        xturn = true;
+        board[tile.id] = 1;
+        checkForWinner();
+        if (winnerExists == false) {
+            aiTurn();
+        }
     }
     checkForWinner();
 }
@@ -40,19 +41,41 @@ function checkForWinner() {
     } else if (tiles[6].innerHTML == tiles[4].innerHTML && tiles[4].innerHTML == tiles[2].innerHTML && !(isntClaimed(tiles[2]))) {
         win(tiles[6], tiles[4], tiles[2]);
     }
+
+    var boardFull = true;
+    for (var i = 0; i < board.length; i++) {
+        if(board[i] == 0){
+          boardFull = false;
+        }
+    }
+    if (boardFull == true){
+      winnerExists = true;
+    }
 }
 
 function win(x, y, z) {
     var player = x.innerHTML;
-    x.style.background = "#eee";
-    y.style.background = "#eee";
-    z.style.background = "#eee";
+    winnerExists = true;
+    x.style.background = "#d6d6d6";
+    y.style.background = "#d6d6d6";
+    z.style.background = "#d6d6d6";
 }
 
 function reset() {
     for (var i = 0; i < tiles.length; i++) {
+        board[i] = 0;
         tiles[i].innerHTML = "";
         tiles[i].style.background = "white"
     }
-    xturn = true;
+    winnerExists = false;
+}
+
+function aiTurn() {
+    var tileToClaim;
+    while (board[tileToClaim] != 0) {
+        tileToClaim = Math.floor(Math.random() * 10);
+        console.log(tileToClaim);
+    }
+    tiles[tileToClaim].innerHTML = 'O';
+    board[tileToClaim] = 2;
 }

@@ -38,7 +38,7 @@ p {
   border-radius: 10px;
   width: 20vh;
   height: 20vh;
-  background-color: white;
+  background: white;
   font-size: 13.5vh;
   cursor: pointer;
   float: left;
@@ -47,7 +47,7 @@ p {
 }
 
 .tile:hover{
-  background-color: #eeeeee;
+  background: #eeeeee;
   transition-duration: 0.2s;
 }
 
