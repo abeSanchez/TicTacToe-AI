@@ -35,7 +35,7 @@ p {
 .tile {
   padding: 0;
   margin: 1vh;
-  border-radius: 10px;
+  border-radius: 1.5vh;
   width: 20vh;
   height: 20vh;
   background: white;
@@ -58,7 +58,7 @@ p {
   background-color: white;
   width: 15vh;
   height: auto;
-  border-radius: 5px;
+  border-radius: 1vh;
   color: #7acbbf;
   font-size: 3vh;
   cursor: pointer;
