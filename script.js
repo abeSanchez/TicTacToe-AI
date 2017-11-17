@@ -1,3 +1,44 @@
+// This is quite old. Here's how I would do this in java (given that each move is valid).
+// class TicTacToe {
+
+//     int ro[];
+//     int co[];
+//     int diag;
+//     int diag2;
+    
+//     public TicTacToe(int n) {
+//         ro = new int[n];
+//         co = new int[n];
+//         diag = diag2 = 0;
+//     }
+
+//     public int move(int row, int col, int player) {
+//         if(player == 1) {
+//             ro[row]++;
+//             co[col]++;
+//             if(row == col) diag++;
+//             if(col + row == ro.length - 1) diag2++;
+//         } else {
+//             ro[row]--;
+//             co[col]--;
+//             if(row == col) diag--;
+//             if(col + row == ro.length - 1) diag2--;
+//         }
+//         return isWinner(row, col) ? player : 0;
+//     }
+    
+//     private boolean isWinner(int row, int col){
+//         int n = ro.length;
+//         if(Math.abs(ro[row]) == n) return true;
+//         if(Math.abs(co[col]) == n) return true;
+//         if(Math.abs(diag) == n || Math.abs(diag2) == n) return true;
+//         return false;
+//     }
+    
+// }
+
+
+
 var tiles = document.getElementsByClassName("tile");
 var buttons = document.getElementsByClassName('buttons');
 var winnerExists = false;
